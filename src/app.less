@@ -18,14 +18,30 @@ gui {
 
   justify-content: space-between;
 
-  peers {
+  sim-objects {
+    display: flex;
+
+    flex-direction: column;
+
     flex: 1 0 auto;
+
+    peers {
+      flex: 1 0 auto;
+    }
+
+    miners {
+      flex: 1 0 auto;
+
+      font-family: monospace;
+
+      miner {
+        display: block;
+      }
+    }
   }
 
   current-block {
     flex: 1 0 auto;
-
-    align-items: center;
 
     block-number, time-remaining { display: block; }
 
@@ -53,6 +69,35 @@ gui {
 
        border: solid 1px #ccc
      }
+    }
+  }
+
+  chain-explorer {
+    flex: 1 0 auto;
+    
+    display: flex;
+    flex-direction: column;
+
+    font-size: 0.9em;
+
+    blocks {
+
+      overflow-y: auto;
+
+      block {
+        display: block;
+
+        padding: 0.1em;
+        margin: 0.1em;
+
+        border: solid 1px #ccc;
+
+        transactions {
+          transaction {
+            display: block;
+          }
+        }
+      }
     }
   }
 }
